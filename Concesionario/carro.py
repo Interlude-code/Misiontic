@@ -10,5 +10,5 @@ class carro(vehiculos):
         self.siGas=siGas
         self.siHybrido=siHybrido
 
-    ##sebastian es con push? espere ahor asi gonorrea
+    ##sebastian es con push? espere ahor asi gonorrea sasa
 
