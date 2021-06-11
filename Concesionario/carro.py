@@ -10,7 +10,7 @@ class carro(vehiculos):
         self.siGas=siGas
         self.siHybrido=siHybrido
 
-    ###prueba damaris
+    
 
    
 
