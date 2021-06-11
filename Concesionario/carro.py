@@ -10,6 +10,5 @@ class carro(vehiculos):
         self.siGas=siGas
         self.siHybrido=siHybrido
 
-        pruebas
-
+sebastian pudiste
 
