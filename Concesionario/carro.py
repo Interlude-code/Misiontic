@@ -10,5 +10,5 @@ class carro(vehiculos):
         self.siGas=siGas
         self.siHybrido=siHybrido
 
-    ##sebastian pudiste ayudaaaa nada sssa bhjhjh 
+    ##sebastian es con push?
 
