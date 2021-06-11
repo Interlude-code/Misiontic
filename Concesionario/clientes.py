@@ -7,4 +7,4 @@ class cliente(Persona):
         super().__init__(nombre, telefono, correo, documento)
         self.direccionEnvio = direccionEnvio
         self.correoFacturacion = correoFacturacion
-   ## nosee espere jejejeje coaa
+   
