@@ -41,6 +41,27 @@ def ingresacliente():
         cl.append(input("Ingrese  " + i + " "))
     cl=cliente(cl[0],cl[1],cl[2],cl[3],cl[4],cl[5])
     concesionario1.agregarCliente(cl)    
+
+def venderCarro():
+    vn=input("Ingrese el nombre del vendedor : ")
+    vn=concesionario1.buscarVendedor(vn)
+    if not vn:
+        print('Vendedor no encontrado !acceso denegado a la venta! ')
+        return
+    cl=input("Ingrese el documento del cliente : ")
+    if not cl:
+        print("Cliente no encontrado")
+        add=input("Desea agregar como cliente nuevo ").upper()
+        if add=='SI':
+            ingresacliente()
+            venderCarro()
+        elif add =='NO' :
+            return
+
+def venderMoto():
+    cl=input("Ingrese el documento del cliente : ")
+    vn=input("Ingrese el nombre del vendedor : ")
+
     
     
     
@@ -52,9 +73,10 @@ concesionario1= concesionario(nombreConcesionario)
 while True:
     opt= input('''Ingrese el numero para la accion seleccionada :
 1. Para ingresar un vehiculo
-2. Para ingresar un vendedor
-3. Ingresar un cliente
-4. Ingresar inventario a vehiculo
+2. Ver inventario
+3. Para ingresar un vendedor
+4. Ingresar un cliente
+5. Vender un vehiculo
 ''')
     if opt== '1':
         opt=input('''Tipo de vehiculo : 
@@ -67,12 +89,25 @@ while True:
             ingresarmoto()
         else:
             print(" opcion erronea ")
-    
-    elif opt == '2':
+    elif opt=='2':
+        concesionario1.verInventario()
+    elif opt == '3':
         
         ingresavendedor()
-    elif opt == '3':
+    elif opt == '4':
         ingresacliente()
+    elif opt=='5':
+        opt=input('''Tipo de vehiculo : 
+1. Carro
+2. Moto 
+''')
+        if  opt == '1':
+            venderCarro()
+        elif opt=='2':
+            venderMoto()
+        else:
+            print(" opcion erronea ")
+    
         
     
     else:

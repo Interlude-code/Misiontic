@@ -46,6 +46,45 @@ class concesionario:
     
     def agregarCliente(self,cliente):
         self.listadeClientes.append(cliente)
+        
+    def buscarVendedor(self,documento):
+        for vendedor in self.listadeVendedores:
+            if vendedor.documento == documento:
+                return vendedor
+            else:
+                return False
+        
+    def buscarCliente(self,documento):
+        for cliente in self.listadeClientes:
+            if cliente.documento == documento:
+                return cliente
+            else :
+                return False
+    
+    def verInventario(self):
+        for vehiculos in self.listadeCarros:
+            print("Carro ")
+            print("Marca : ",vehiculos.marca)
+            print("Kilometraje : ",vehiculos.kilometraje)
+            print("Modelo : ",vehiculos.modelo)
+            print("Tiene Gas : ",vehiculos.siGas)
+            print("Vehiculo hibrido : ",vehiculos.siHybrido)
+            print("Cantidad Disponible : ",vehiculos.inventario)
+            print("Precio : ",vehiculos.precio)
+            print("-----------------------------------------------")
+        for vehiculos in self.listadeMotos:
+            print("Moto ")
+            print("Cilindraje : ",vehiculos.cilindraje)
+            print("Kilometraje : ",vehiculos.kilometraje)
+            print("Modelo : ",vehiculos.modelo)
+            print("Tiene SOAT : ",vehiculos.siSoat)
+            print("Tiene Tecnicomecanica : ",vehiculos.siTecnico)
+            print("Precio : ",vehiculos.precio)
+            print("Cantidad Dispoible : ",vehiculos.inventario)
+            print("-----------------------------------------------")    
+        
+        
+        
 
         
         

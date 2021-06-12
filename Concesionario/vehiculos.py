@@ -4,6 +4,7 @@ Created on Fri Jun 11 07:56:50 2021
 
 @author: Interlude
 """
+import random
 
 class vehiculos:
     def __init__(self,kilometraje,modelo,precio,inventario):
@@ -11,4 +12,4 @@ class vehiculos:
         self.modelo=modelo
         self.precio=precio
         self.inventario=inventario
-        
+        self.codigo=random.randint(10000,20000)
