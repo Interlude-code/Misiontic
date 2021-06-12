@@ -54,7 +54,7 @@ ROOT_URLCONF = 'proyecto1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["C:/Users/Interlude/Desktop/Primer sitio web html/django\Misiontic/plantillas html"], #carpeta donde estan las plantillas
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
