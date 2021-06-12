@@ -51,15 +51,15 @@ class concesionario:
         for vendedor in self.listadeVendedores:
             if vendedor.documento == documento:
                 return vendedor
-            else:
-                return False
+            
+        return False
         
     def buscarCliente(self,documento):
         for cliente in self.listadeClientes:
             if cliente.documento == documento:
                 return cliente
-            else :
-                return False
+            
+        return False
     
     def verInventario(self):
         for vehiculos in self.listadeCarros:
@@ -71,6 +71,7 @@ class concesionario:
             print("Vehiculo hibrido : ",vehiculos.siHybrido)
             print("Cantidad Disponible : ",vehiculos.inventario)
             print("Precio : ",vehiculos.precio)
+            print("Codigo de venta : ",vehiculos.codigo)
             print("-----------------------------------------------")
         for vehiculos in self.listadeMotos:
             print("Moto ")
@@ -81,9 +82,14 @@ class concesionario:
             print("Tiene Tecnicomecanica : ",vehiculos.siTecnico)
             print("Precio : ",vehiculos.precio)
             print("Cantidad Dispoible : ",vehiculos.inventario)
+            print("Codigo de venta : ",vehiculos.codigo)
             print("-----------------------------------------------")    
         
-        
+    def buscarCarro(self,codigo):
+        for carro in self.listadeCarros:
+            if carro.codigo==codigo:
+                return carro
+        return False
         
 
         

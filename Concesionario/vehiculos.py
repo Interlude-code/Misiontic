@@ -12,4 +12,4 @@ class vehiculos:
         self.modelo=modelo
         self.precio=precio
         self.inventario=inventario
-        self.codigo=random.randint(10000,20000)
+        self.codigo='COD'+str(random.randint(10000,20000))

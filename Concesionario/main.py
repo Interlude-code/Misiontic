@@ -57,6 +57,15 @@ def venderCarro():
             venderCarro()
         elif add =='NO' :
             return
+    
+    opt = input("Ingrese el Codigo de venta del vehiculo deseado : ")
+    opt = concesionario1.agregarCarro(opt)
+    if not opt:
+        print('Codigo de vehiculo no existe : ')
+        return
+    
+    
+
 
 def venderMoto():
     cl=input("Ingrese el documento del cliente : ")
@@ -74,9 +83,10 @@ while True:
     opt= input('''Ingrese el numero para la accion seleccionada :
 1. Para ingresar un vehiculo
 2. Ver inventario
-3. Para ingresar un vendedor
-4. Ingresar un cliente
-5. Vender un vehiculo
+3. Ingresar vehiculos al Inventario
+4. Para ingresar un vendedor
+5. Ingresar un cliente
+6. Vender un vehiculo
 ''')
     if opt== '1':
         opt=input('''Tipo de vehiculo : 
@@ -91,12 +101,13 @@ while True:
             print(" opcion erronea ")
     elif opt=='2':
         concesionario1.verInventario()
-    elif opt == '3':
+    elif opt == '4':
+        
         
         ingresavendedor()
-    elif opt == '4':
+    elif opt == '5':
         ingresacliente()
-    elif opt=='5':
+    elif opt=='6':
         opt=input('''Tipo de vehiculo : 
 1. Carro
 2. Moto 
