@@ -89,7 +89,15 @@ class concesionario:
         for carro in self.listadeCarros:
             if carro.codigo==codigo:
                 return carro
+            
         return False
+    def buscarMoto(self,codigo):
+        for moto in self.listadeMotos:
+            if moto.codigo==codigo:
+                return moto
+        return False
+    
+    
         
 
         

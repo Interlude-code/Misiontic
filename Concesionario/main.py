@@ -11,8 +11,9 @@ def ingresarcarro():
     plantilla=['kilometraje', 'modelo', 'precio','inventario','siGas','siHybrido','marca']
     for i in plantilla:
         car.append(input("Ingrese  " + i + " "))
-    car=carro(car[0],car[1],car[2],car[3],car[4],car[5],car[6])
+    car=carro(car[0],car[1],car[2],int(car[3]),car[4],car[5],car[6])
     concesionario1.agregarCarro(car)
+    print('Carro creado con exito ')
 
 def ingresarmoto():
     
@@ -23,6 +24,7 @@ def ingresarmoto():
         motos.append(input("Ingrese  " + i + " "))
     motos=moto(motos[0],motos[1],motos[2],motos[3],motos[4],motos[5],motos[6])
     concesionario1.agregarMoto(motos)
+    print('Moto creada con exito ')
     
 def ingresavendedor():
 
@@ -31,7 +33,8 @@ def ingresavendedor():
     for i in plantilla:
         vend.append(input("Ingrese  " + i + " "))
     vend=vendedores(vend[0],vend[1],vend[2],vend[3],vend[4])
-    concesionario1.agregarVendedor(vend)    
+    concesionario1.agregarVendedor(vend)  
+    print('Vendedor creado con exito ')
     
 def ingresacliente():
     
@@ -41,35 +44,61 @@ def ingresacliente():
         cl.append(input("Ingrese  " + i + " "))
     cl=cliente(cl[0],cl[1],cl[2],cl[3],cl[4],cl[5])
     concesionario1.agregarCliente(cl)    
+    print('Cliente creado con exito ')
 
 def venderCarro():
-    vn=input("Ingrese el nombre del vendedor : ")
+    vn=input("Ingrese el Codigo de vendedor : ")
     vn=concesionario1.buscarVendedor(vn)
     if not vn:
         print('Vendedor no encontrado !acceso denegado a la venta! ')
         return
     cl=input("Ingrese el documento del cliente : ")
+    cl=concesionario1.buscarCliente(cl)
     if not cl:
         print("Cliente no encontrado")
         add=input("Desea agregar como cliente nuevo ").upper()
         if add=='SI':
             ingresacliente()
+            print('Cliente creado con exito ')
             venderCarro()
         elif add =='NO' :
             return
     
     opt = input("Ingrese el Codigo de venta del vehiculo deseado : ")
-    opt = concesionario1.agregarCarro(opt)
+    opt = concesionario1.buscarCarro(opt)
     if not opt:
         print('Codigo de vehiculo no existe : ')
         return
+    opt.inventario -= 1
+    print('! Venta exitosa !')
     
-    
-
-
 def venderMoto():
+   def venderMoto():
+    vn=input("Ingrese el Codigo de vendedor : ")
+    vn=concesionario1.buscarVendedor(vn)
+    if not vn:
+        print('Vendedor no encontrado !acceso denegado a la venta! ')
+        return
     cl=input("Ingrese el documento del cliente : ")
-    vn=input("Ingrese el nombre del vendedor : ")
+    cl=concesionario1.buscarCliente(cl)
+    if not cl:
+        print("Cliente no encontrado")
+        add=input("Desea agregar como cliente nuevo ").upper()
+        if add=='SI':
+            ingresacliente()
+            print('Cliente creado con exito ')
+            venderMoto()
+            
+        elif add =='NO' :
+            return
+    
+    opt = input("Ingrese el Codigo de venta del vehiculo deseado : ")
+    opt = concesionario1.buscarMoto(opt)
+    if not opt:
+        print('Codigo de vehiculo no existe : ')
+        return
+    opt.inventario -= 1
+    print('! Venta exitosa !')
 
     
     
