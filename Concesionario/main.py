@@ -29,10 +29,10 @@ def ingresarmoto():
 def ingresavendedor():
 
     vend=[]
-    plantilla=['nombre', 'telefono', 'correo', 'documento', 'identificacionEmpresarial']
+    plantilla=['nombre', 'telefono', 'correo', 'documento']
     for i in plantilla:
         vend.append(input("Ingrese  " + i + " "))
-    vend=vendedores(vend[0],vend[1],vend[2],vend[3],vend[4])
+    vend=vendedores(vend[0],vend[1],vend[2],vend[3])
     concesionario1.agregarVendedor(vend)  
     print('Vendedor creado con exito ')
     
@@ -100,6 +100,34 @@ def venderMoto():
     opt.inventario -= 1
     print('! Venta exitosa !')
 
+def agregarinventario():
+    opt=input('''Tipo de vehiculo : 
+1. Carro
+2. Moto 
+''')
+    if  opt == '1':
+        sel = input("Ingrese el Codigo de venta del vehiculo deseado : ")
+        sel = concesionario1.buscarCarro(sel)
+        if not sel:
+            print('Codigo de vehiculo no existe : ')
+            return
+        pd=int(input("Ingresa la cantidad de unidades que deseas agregar : "))
+        sel.inventario += pd 
+        print('! actulizacion exitosa !')
+
+    elif opt=='2':
+        sel = input("Ingrese el Codigo de venta del vehiculo deseado : ")
+        sel = concesionario1.buscarMoto(sel)
+        if not sel:
+            print('Codigo de vehiculo no existe : ')
+            return
+        pd=int(input("Ingresa la cantidad de unidades que deseas agregar : "))
+        sel.inventario += pd 
+        print('! actulizacion exitosa !')
+        
+    else:
+        print('Opcion erronea')
+    
     
     
     
@@ -130,9 +158,9 @@ while True:
             print(" opcion erronea ")
     elif opt=='2':
         concesionario1.verInventario()
+    elif opt=='3':
+        agregarinventario()
     elif opt == '4':
-        
-        
         ingresavendedor()
     elif opt == '5':
         ingresacliente()
