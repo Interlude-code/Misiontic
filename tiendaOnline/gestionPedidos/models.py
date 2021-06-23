@@ -9,16 +9,17 @@ class clientes(models.Model):
         #cliente1=clientes(nombre='',direccion='',email='',telefono='',documento='')
         def __str__(self):
                 return self.nombre
-class carros(models.Model):
-    kilometraje=models.CharField(max_length=20)
-    modelo=models.CharField(max_length=4,verbose_name='Año de fabricacion')
+class ropa(models.Model):
+    tipo=models.CharField(max_length=40)
     precio=models.IntegerField()
+    seccion=models.CharField(max_length=50)
+    tallas=models.IntegerField()
+    material=models.CharField(max_length=70)
+    resorte_interno=models.BooleanField()
+    referencia=models.CharField(max_length=20)
     inventario=models.IntegerField()
-    marca=models.CharField(max_length=10)
-    placa=models.CharField(max_length=10)
-    fechaI=models.DateField(blank=True, null=True)
-#carr1=carros(kilometraje='20000',modelo='corsa',precio=15000000,inventario=1,siGas=False,siHybrido=False,marca='renoult',placa='MIE88')       
-    
+    lote=models.CharField(max_length=50,blank=True, null=True)
+    fecha_Produccion=models.DateField(blank=True, null=True)
 
-    def __str__(self):
-            return self.placa
+
+
