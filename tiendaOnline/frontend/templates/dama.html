@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+{% block title %} Dama {% endblock %}
+
+
+
+
+{%  block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            {% for prenda in ropa %}
+                
+                <div class="card"  style="width: 18%; margin: 5px 5px;">
+                    <img src="{{prenda.foto.url}}">
+                    <div class="card-body"style="text-align: center;">
+
+                        <h7 class="card-title"> {{prenda.tipo}}</h7>
+                        <p class="card-text">{{prenda.precio}}&nbsp;$</p>
+
+
+
+                    </div>
+
+
+                </div>
+            
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
