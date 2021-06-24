@@ -11,9 +11,10 @@ def inicio(request):
     return render(request, "inicio.html")
 def servicios(request):
     return render(request, "servicios.html")
-def dama(request):
-    return render(request, "dama.html")
-def caballero(request):
-    return render(request, "caballero.html")
 def contacto(request):
     return render(request, "contacto.html")
+def dama(request):
+    ropaDama=ropa.objects.filter(tipo='Falda en jean larga ¾.')
+    return render(request, "dama.html",{"ropa":ropaDama})
+def caballero(request):
+    return render(request, "caballero.html")
